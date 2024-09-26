@@ -4,6 +4,7 @@ const connectDB = require("./database/connectDB");
 const blogRoute = require("./routes/blog");
 const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
+const generateRoute = require("./routes/generate");
 const verifyToken = require("./middleware/verifyToken");
 const userRoute = require("./routes/user");
 const path = require("path");
@@ -38,6 +39,8 @@ app.use("/api/user",userRoute);
 //* Blog Route
 app.use("/api/blog",blogRoute);
 
+//* Generate URL
+app.use("/api/generate",generateRoute);
 
 
 //? Database Connectivity
